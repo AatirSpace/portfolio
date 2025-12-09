@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aatir Github Portfolio</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    * {
+        box-sizing: border-box;
+    }
+    html {
+        font-size: 16px;
+        font-family: 'Roboto Mono',sans-serif;
+    }
+    p {
+        font-size: 1.2rem;
+        line-height: 160%;
+    }
+    #viewport {
+        display: block;
+        position: fixed;
+        top:0; bottom:0; left:0; right:0;
+    }
+    .outer-container {
+        width: 100%;
+    }
+    .inner-container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 1rem;
+        margin: auto;
+    }
+    .full-inner-container {
+        max-width: 100%;
+    }
+    .header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .logo {
+        font-family: "Anton";
+        font-size: 6rem;
+        line-height: 100%;
+    }
+    .contact {
+        font-size: 1.5rem;
+    }
+    footer {
+        margin-top: 4rem;
+        border-top: 1px solid #000000;
+        text-align: center;
+    }
+    .project-headline {
+        margin-top: 4rem;
+    }
+    .project-showcase {
+        margin-top: 4rem;
+        display: flex;        
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .project-asset {
+        overflow: hidden;
+    }
+    .project-media {
+        max-height: 600px;
+        overflow: hidden;
+    }
+    .project-media img {
+        height: 100%;
+        max-height: 600px;
+    }
+    .project-media video {
+        width: auto;
+        height: 100%;
+        max-height: 600px;
+    }
+    .project-asset p {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .project-asset .step {
+        background-color: #2c2c2c;
+        color: white;
+        padding: 8px 8px;
+        line-height: 100%;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+    .wa-outer-container {
+        background-image: url('./assets/wabg.png');
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 40px;
+        max-width: 400px;
+        font-family: 'Roboto', sans-serif;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .wa-msg-container {
+        padding: 8px;
+        background-color: white;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #eeeeee;
+    }
+    .wa-msg-container video {
+        width: 100%;
+    }
+    .wa-media-container {
+        /* height: 600px; */
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .wa-body-container {
+        margin-top: 8px;
+    }
+    .wa-link-container {
+        margin-top: 12px;
+        padding: 4px;
+        padding-top: 12px;
+        border-top: 1px solid #dddddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        color: #0083d9;
+        font-weight: 600;
+    }
+    .wa-link-container img {
+        height: 24px;
+
+    }
+    .note {
+        margin-top: 48px;
+
+    }
+    .note-text {
+        font-family: 'Anton';
+        font-size: 4rem;
+        opacity: 0.3;
+        /* text-align: center; */
+    }
+
+
+</style>
+
+<script type="module">
+    import { animate, onScroll, splitText, stagger, engine, createTimeline } from 'https://esm.sh/animejs';
+    engine.defaults.autoplay = false;
+
+    window.onload = () => {
+        (function runAnimation() {
+
+            function commonAnimate(o) {
+                let commonProperties = {
+                    y:[20,0],
+                    opacity: [0,1],
+                    // delay: stagger(500),
+                    delay: 100,
+                    ease: 'inOutCirc',
+                    autoplay: onScroll(),
+                    // autoplay: onScroll({container:o.container, target:o.target, enter: '99% 20%', debug:true}),
+                }
+                return commonProperties;
+
+            }
+
+            let animateClasses = ['.logo', '.contact', '.project-headline', '.project-asset'];
+
+            animateClasses.forEach((c)=>{
+                let elements = Array.from(document.querySelectorAll(c));
+                elements.forEach((element)=>{
+                    let viewport = document.getElementById('viewport');
+                    animate(element, commonAnimate());
+                });
+            });
+            
+        })();
+        
+    }
+    
+</script>
+
+<body>
+    <viewport id="viewport"></viewport>
+    <header>
+        <div class="outer-container">
+            <div class="inner-container header">
+                <div>
+                    <div class="logo">Aatir Kamaal</div>
+                </div>
+                <div>
+                    <div class="contact">Contact : check email / resume </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="project-headline">
+                <h1>AI to create ecommerce product short videos.</h1>
+                <p>automatically generate multiple short, engaging videos of e-commerce products for promotion, retargeting, and social media campaigns.</p>
+            </div>
+            <div class="project-showcase">
+                
+                <div class="project-asset">
+                    <div class="project-text">
+                        <p><span class="step" style="font-size: 1rem;">Step 1</span><br />Auto pull the product image.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="./assets/suit1.png">
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+                <div class="project-asset">
+                    <div class="project-text">
+                        <p><span class="step" style="font-size: 1rem;">Step 2</span><br />Convert to engaging short video styles.</p>
+                    </div>
+                    <div class="project-media">
+                        <video src="./assets/ecom1.mp4" controls autoplay loop></video>
+                    </div>
+                
+                    
+                </div>
+
+                <div class="project-asset">
+                    <div class="project-text">
+                        <p><span class="step" style="font-size: 1rem;">Step 3</span><br />Share on social media to increase egagement and sales.</p>
+                    </div>
+                        <div class="wa-outer-container">
+                            <div class="wa-msg-container">
+                                <div class="wa-media-container">
+                                    <video src="./assets/ecom1.mp4" controls autoplay loop></video>
+                                </div>
+                                <div class="wa-body-container">
+                                    <div>
+                                        Hey <strong>Sia</strong>! 👋 
+                                        <br /><br />
+                                        We’ve just launched our brand-new designs! ✨
+                                        <br /><br />
+                                        <strong>Click below to check it out now 👇</strong>
+                                    </div>
+                                </div>
+                                <div class="wa-link-container">
+                                    <img src="./assets/walink.svg" />
+                                    <div>Visit Store</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="note">
+                <div class="note-text">Will be adding more examples.</div>
+            </div>
+        </div>
+
+    <footer>
+        <div class="outer-container">
+            <div class="inner-container">
+                <div>© All Rights Reserved.</div>
+            </div>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
