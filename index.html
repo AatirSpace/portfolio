@@ -210,13 +210,14 @@
             
         }
 
-    document.addEventListener("DOMContentLoaded", function () {
-       runAnimation();
+    window.addEventListener('load', () => {
+        runAnimation();
     });
 
 </script>
 
 <body>
+    <div id="loader"></div>
     <viewport id="viewport"></viewport>
     <header>
         <div class="outer-container">
@@ -304,6 +305,5 @@
         </div>
 
     </footer>
-    <div id="loader"></div>
 </body>
 </html>
