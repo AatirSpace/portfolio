@@ -39,6 +39,8 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
     .logo {
         font-family: "Anton";
@@ -65,19 +67,23 @@
     }
     .project-asset {
         overflow: hidden;
+        max-width: 100%;
     }
     .project-media {
+        max-width: 400px;
         max-height: 600px;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .project-media img {
-        height: 100%;
-        max-height: 600px;
+        max-width: 400px;
+        width: 100%;
     }
     .project-media video {
-        width: auto;
-        height: 100%;
-        max-height: 600px;
+        max-width: 400px;
+        width: 100%;
     }
     .project-asset p {
         margin-left: 2px;
@@ -148,6 +154,18 @@
         font-size: 4rem;
         opacity: 0.3;
         /* text-align: center; */
+    }
+
+    @media screen and (max-width: 400px) {
+        .logo {
+            font-size: 5rem;
+        }
+        .note-text {
+            font-size: 3rem;
+        }
+        .wa-outer-container {
+            padding: 20px;
+        }
     }
 
 
@@ -229,7 +247,7 @@
                         <p><span class="step" style="font-size: 1rem;">Step 2</span><br />Convert to engaging short video styles.</p>
                     </div>
                     <div class="project-media">
-                        <video src="./assets/ecom1.mp4" controls autoplay loop></video>
+                        <video src="./assets/ecom1.mp4" controls autoplay loop muted></video>
                     </div>
                 
                     
@@ -242,7 +260,7 @@
                         <div class="wa-outer-container">
                             <div class="wa-msg-container">
                                 <div class="wa-media-container">
-                                    <video src="./assets/ecom1.mp4" controls autoplay loop></video>
+                                    <video src="./assets/ecom1.mp4" controls autoplay loop muted></video>
                                 </div>
                                 <div class="wa-body-container">
                                     <div>
